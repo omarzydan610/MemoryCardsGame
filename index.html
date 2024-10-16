@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="splash-screen" id="splash-screen">
+      <h1>Memory Cards Game</h1>
+      <form id="myForm">
+        <div style="height: 20px"></div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter Your Name"
+        /><br />
+
+        <label>Choose the level</label><br />
+        <div class="levels">
+          <label class="custom-radio">
+            <input type="radio" id="easy" name="level" value="Easy" checked />
+            <span class="radio-mark"></span>Easy
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" id="medium" name="level" value="Medium" />
+            <span class="radio-mark"></span>Medium
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" id="hard" name="level" value="Hard" />
+            <span class="radio-mark"></span>Hard
+          </label>
+        </div>
+
+        <button type="submit">Start Game</button>
+      </form>
+
+      <div style="height: 10%"></div>
+    </div>
+    <div class="game-screen">
+      <div class="container">
+        <div class="result">
+          <div class="overlay"></div>
+          <div class="result-window">
+            Well Done you did it with only 5 wrong tries
+          </div>
+        </div>
+        <div class="banner">
+          <div class="name">Hello: <span></span></div>
+          <div class="level">Level: <span></span></div>
+          <div class="miss">Wrong Tries: <span>0</span></div>
+        </div>
+        <div class="game-area" id="game-area">
+          <div class="no-touch"></div>
+          <div class="counter">0</div>
+        </div>
+      </div>
+    </div>
+    <audio src="audio/Hit.mp3" preload="auto" id="hit"></audio>
+    <audio src="audio/Miss.mp3" preload="auto" id="miss"></audio>
+    <script src="main.js"></script>
+  </body>
+</html>
