@@ -97,7 +97,7 @@ function gameplay(cardsNumber,level,name){
         },5600)
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },5700)
+        },5900)
     }
     else if(level==="Medium"){
         for(let i=0;i<4;i++){
@@ -114,7 +114,7 @@ function gameplay(cardsNumber,level,name){
         },6500)
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },6800)
+        },7100)
     }
     else{
         for(let i=0;i<4;i++){
@@ -131,7 +131,7 @@ function gameplay(cardsNumber,level,name){
         },7000)
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },7500)
+        },7900)
     }
     
     setTimeout(() => {
