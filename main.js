@@ -114,7 +114,7 @@ function gameplay(cardsNumber,level,name){
         },6500)
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },7000)
+        },6800)
     }
     else{
         for(let i=0;i<4;i++){
@@ -131,7 +131,7 @@ function gameplay(cardsNumber,level,name){
         },7000)
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },7800)
+        },7500)
     }
     
     setTimeout(() => {
