@@ -75,43 +75,65 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 );
 
 function gameplay(cardsNumber,level,name){
-    let countValues=[3,2,1,"GO.."];
-    for(let i=0;i<4;i++){
-        setTimeout(()=>{
-            document.querySelector(".counter").innerHTML=countValues[i];
-            document.querySelector(".counter").classList.add("show");
-        },1000*(i+1))
-        setTimeout(()=>{
-                document.querySelector(".counter").classList.remove("show");
-            },((1000*(i+1))+600))
-    }
-    setTimeout(()=>{
-        document.querySelector(".counter").style.setProperty("display","none");
-    },5000)
-
-    if(level==="Easy"){
-        setTimeout(()=>{
-            document.querySelector(".no-touch").style.setProperty("display","none");
-        },5600)
-    }
-    else if(level==="Medium"){
-        setTimeout(()=>{
-            document.querySelector(".no-touch").style.setProperty("display","none");
-        },6200)
-    }
-    else{
-        setTimeout(()=>{
-            document.querySelector(".no-touch").style.setProperty("display","none");
-        },6500)
-    }
-    
     let gameArea = document.querySelector(".game-area");
     let cards= Array.from(gameArea.children);
     let prevData="";
     let prevCard="";
     let miss=0,hit=0;
-    copyCards=cards;
+    let countValues=[3,2,1,"GO.."];
 
+    if(level==="Easy"){
+        for(let i=0;i<4;i++){
+            setTimeout(()=>{
+                document.querySelector(".counter").innerHTML=countValues[i];
+                document.querySelector(".counter").classList.add("show");
+            },1000*(i+1)+600)
+            setTimeout(()=>{
+                    document.querySelector(".counter").classList.remove("show");
+                },((1000*(i+1))+1200))
+        }
+        setTimeout(()=>{
+            document.querySelector(".counter").style.setProperty("display","none");
+        },5600)
+        setTimeout(()=>{
+            document.querySelector(".no-touch").style.setProperty("display","none");
+        },5700)
+    }
+    else if(level==="Medium"){
+        for(let i=0;i<4;i++){
+            setTimeout(()=>{
+                document.querySelector(".counter").innerHTML=countValues[i];
+                document.querySelector(".counter").classList.add("show");
+            },1000*(i+1)+1500)
+            setTimeout(()=>{
+                    document.querySelector(".counter").classList.remove("show");
+                },((1000*(i+1))+2100))
+        }
+        setTimeout(()=>{
+            document.querySelector(".counter").style.setProperty("display","none");
+        },6500)
+        setTimeout(()=>{
+            document.querySelector(".no-touch").style.setProperty("display","none");
+        },6800)
+    }
+    else{
+        for(let i=0;i<4;i++){
+            setTimeout(()=>{
+                document.querySelector(".counter").innerHTML=countValues[i];
+                document.querySelector(".counter").classList.add("show");
+            },1000*(i+1)+2000)
+            setTimeout(()=>{
+                    document.querySelector(".counter").classList.remove("show");
+                },((1000*(i+1))+2600))
+        }
+        setTimeout(()=>{
+            document.querySelector(".counter").style.setProperty("display","none");
+        },7000)
+        setTimeout(()=>{
+            document.querySelector(".no-touch").style.setProperty("display","none");
+        },7500)
+    }
+    
     setTimeout(() => {
         for(let i=0;i<cards.length;i++){
             setTimeout(() => {
@@ -126,7 +148,6 @@ function gameplay(cardsNumber,level,name){
     }, 3000);
 
     function check(currCard,currData){
-        console.log(currData+"   "+ prevData);
         if(currData!=null){
             if(prevData===""){
                 prevData=currData;
