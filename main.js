@@ -80,29 +80,29 @@ function gameplay(cardsNumber,level,name){
         setTimeout(()=>{
             document.querySelector(".counter").innerHTML=countValues[i];
             document.querySelector(".counter").classList.add("show");
-        },1000*i)
+        },1000*(i+1))
         setTimeout(()=>{
                 document.querySelector(".counter").classList.remove("show");
-            },((1000*(i))+600))
+            },((1000*(i+1))+600))
     }
     setTimeout(()=>{
         document.querySelector(".counter").style.setProperty("display","none");
-    },4000)
+    },5000)
 
     if(level==="Easy"){
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },4600)
+        },5600)
     }
     else if(level==="Medium"){
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },5400)
+        },6200)
     }
     else{
         setTimeout(()=>{
             document.querySelector(".no-touch").style.setProperty("display","none");
-        },5800)
+        },6500)
     }
     
     let gameArea = document.querySelector(".game-area");
@@ -126,6 +126,7 @@ function gameplay(cardsNumber,level,name){
     }, 3000);
 
     function check(currCard,currData){
+        console.log(currData+"   "+ prevData);
         if(currData!=null){
             if(prevData===""){
                 prevData=currData;
