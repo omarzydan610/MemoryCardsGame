@@ -17,6 +17,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
         "images/image12.png"
     ];
 
+    
     if(name==""){
         document.querySelector(".name span").innerHTML="Anonymous";
     }
